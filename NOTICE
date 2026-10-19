@@ -1,0 +1,14 @@
+This project contains code derived from CivNexus6 by deliverator23
+(https://github.com/deliverator23/CivNexus6).
+
+Specifically, cli/civhash.cpp was extracted from CivNexus6's
+ConsoleApplication1.cpp:
+
+  - the crc32_table and the ComputeHash / calculate_crc32 routines
+  - the bone hierarchy hash (calculate_bone_hierarchy_hash) semantics
+
+The extraction, the command line interface, the reverse-search implementation
+and the DSH plugin wrapper are original work.
+
+This project is not affiliated with Firaxis Games or 2K. It contains no
+Civilization VI game assets.
