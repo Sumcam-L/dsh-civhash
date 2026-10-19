@@ -28,8 +28,11 @@ dsh-civhash/
 ├── src/
 │   └── index.ts             # DSH 插件入口：注册 _dsh_external_dsh_civhash_hash
 ├── scripts/
-│   └── build.sh             # 编译 TypeScript（src → lib）
+│   ├── build.sh             # 编译 TypeScript（src → lib）
+│   └── test.mjs             # 对 bin/civhash.exe 跑已知向量
 ├── cordis.patch.yml         # DSH bundle patch
+├── LICENSE                  # BSD-3-Clause
+├── NOTICE                   # 上游 CivNexus6 署名
 └── package.json
 ```
 
