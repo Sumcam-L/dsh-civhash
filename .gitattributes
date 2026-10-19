@@ -1,0 +1,14 @@
+# Normalize line endings on checkout / text diffs
+* text=auto eol=lf
+
+# Windows build scripts keep CRLF so cmd.exe is happy
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binaries: never touch
+*.exe binary
+*.dll binary
+*.lib binary
+*.pdb binary
+*.png binary
+*.jpg binary

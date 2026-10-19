@@ -1,0 +1,14 @@
+node_modules/
+lib/
+*.tsbuildinfo
+*.tgz
+
+# CLI build output (bin/civhash.exe is the tracked artifact)
+cli/civhash.exe
+cli/*.o
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

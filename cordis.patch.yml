@@ -1,0 +1,13 @@
+# @dsh-external/dsh-civhash bundle patch
+#
+# 把 CivNexus6 的 civhash CLI 注册成 AI 可调用工具
+# （_dsh_external_dsh_civhash_hash：Civ 风格 CRC32 hash / 骨骼链 hash / 反推后缀）。
+#
+# 正常插件安装（bundle 层）：
+#   dsh plugin --profile web add link:E:/Sumcam/Desktop/CivNexus6/hash-cli/dsh-civhash
+# 之后把 "@dsh-external/dsh-civhash" 加进 profile package.json 的 dsh.profile.bundles。
+#
+# 可用配置项（config.exePath）覆盖自带的 bin/civhash.exe。
+- insert:
+    - id: dsh-civhash
+      name: '@dsh-external/dsh-civhash'
