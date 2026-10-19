@@ -110,10 +110,21 @@ cp cli/civhash.exe bin/civhash.exe
 > `node_modules` 由 `scripts/build.sh` 自动建立 junction 链接，指向本机已有的
 > `dsh-super-injector` / npm 版 dsh 依赖树；仓库本身不提交 `node_modules`。
 
+## 测试
+
+```bash
+node scripts/test.mjs      # 或 npm test
+```
+
+对包内 `bin/civhash.exe` 跑一组已知向量（标准 CRC32 / Civ raw / FNV / 折叠变体 / 骨骼链 /
+反推往返 / int·uint 格式 / 退出码）。重编 exe 后若 hash 语义有变，这里会直接失败。
+用 `CIVHASH_EXE` 环境变量可指定其他可执行文件。
+
 ## 验证记录
 
 - 标准向量：`std("123456789") = 0xCBF43926` ✓
 - 与原工程旧 exe 对照：`NOTIFICATION_ADDED = 0xF26F3ACF` ✓
+- 重编的 `cli/civhash.exe` 与原有 `bin/civhash.exe` 对 12 组用例输出逐字节一致 ✓
 - 骨骼 hash 与 node `zlib` 交叉验证（叶→根名字 + 轨道名的标准 CRC32）✓
 - 反推往返：`raw("TERRA7") = 0x16D22538`，prefix `TERRA` → 精确找回 `7` ✓
 - FNV 反推往返：`fnv("UNIT_ARCHER") = 0x3C250997`，prefix `UNIT_ARCHER` → 空后缀命中 ✓
